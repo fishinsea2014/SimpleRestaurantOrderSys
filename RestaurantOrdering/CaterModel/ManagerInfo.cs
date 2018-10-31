@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CaterDal
+namespace CaterModel
 {
     public class Class1
     {
