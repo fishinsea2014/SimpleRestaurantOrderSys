@@ -1,13 +1,16 @@
-﻿using CaterModel;
+﻿using CaterCommon;
+using CaterModel;
 using System;
 using System.Collections.Generic;
+using System.Data;
+using System.Data.SQLite;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace CaterDal
 {
-    class ManagerInfoDal
+    public partial class ManagerInfoDal
     {
         public List<ManagerInfo> GetList()
         {
@@ -25,6 +28,65 @@ namespace CaterDal
                 });
             }
             return list;
+        }
+
+
+        /// <summary>
+        /// Insert an item
+        /// </summary>
+        /// <param name="mi">Object of ManagerInfo</param>
+        /// <returns></returns>
+        public int Insert(ManagerInfo mi)
+        {
+            string sql = "insert into ManagerInfo(mname,mpwd,mtype) values(@name,@pwd,@type)";
+            SQLiteParameter[] ps = 
+            {
+                new SQLiteParameter("@name", mi.MName),
+                new SQLiteParameter("@pwd", Md5Helper.EncryptString(mi.MPwd)),//Encapsulate with md5
+                new SQLiteParameter("@type", mi.MType)
+            };
+            return SqliteHelper.ExecuteNonQuery(sql, ps);
+        }
+
+        /// <summary>
+        /// Update an item, password should be dealt with specifically.
+        /// </summary>
+        /// <param name="mi"></param>
+        /// <returns></returns>
+        public int Update(ManagerInfo mi)
+        {
+            
+            List<SQLiteParameter> listPs = new List<SQLiteParameter>();
+            string sql = "update ManagerInfo set mname=@name";
+            listPs.Add(new SQLiteParameter("@name", mi.MName));
+            
+            if (!mi.MPwd.Equals("这是原来的密码吗"))
+            {
+                sql += ",mpwd=@pwd";
+                listPs.Add(new SQLiteParameter("@pwd", Md5Helper.EncryptString(mi.MPwd)));
+            }
+            
+            sql += ",mtype=@type where mid=@id";
+            listPs.Add(new SQLiteParameter("@type", mi.MType));
+            listPs.Add(new SQLiteParameter("@id", mi.MId));
+
+            
+            return SqliteHelper.ExecuteNonQuery(sql, listPs.ToArray());
+        }
+
+        /// <summary>
+        /// Delete an item by id.
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
+        public int Delete(int id)
+        {
+            
+            string sql = "delete from ManagerInfo where mid=@id";
+            
+            SQLiteParameter p = new SQLiteParameter("@id", id);
+            
+            return SqliteHelper.ExecuteNonQuery(sql, p);
         }
     }
 }

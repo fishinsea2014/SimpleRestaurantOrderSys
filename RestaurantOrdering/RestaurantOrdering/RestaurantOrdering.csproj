@@ -45,14 +45,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Form1.cs">
+    <Compile Include="FormManagerInfo.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="FormManagerInfo.Designer.cs">
+      <DependentUpon>FormManagerInfo.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="FormManagerInfo.resx">
+      <DependentUpon>FormManagerInfo.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -76,6 +79,16 @@
     <None Include="App.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\CaterBll\CaterBll.csproj">
+      <Project>{215EC56C-14E2-4C17-953C-53FAE93F7D79}</Project>
+      <Name>CaterBll</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CaterModel\CaterModel.csproj">
+      <Project>{A3D88570-51EE-4265-A3FF-31675E40CF34}</Project>
+      <Name>CaterModel</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
