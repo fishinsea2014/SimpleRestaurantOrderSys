@@ -125,24 +125,45 @@ namespace RestaurantOrdering
         /// <param name="e"></param>
         private void dgvList_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            //根据当前点击的单元格，找到行与列，进行赋值
-            //根据索引找到行
+            
             DataGridViewRow row = dgvList.Rows[e.RowIndex];
-            //找到对应的列
             txtId.Text = row.Cells[0].Value.ToString();
             txtName.Text = row.Cells[1].Value.ToString();
             if (row.Cells[2].Value.ToString().Equals("1"))
             {
-                rb1.Checked = true; //值为1，则经理选中
+                rb1.Checked = true; 
             }
             else
             {
-                rb2.Checked = true;//如果为0，则店员选中
+                rb2.Checked = true;
             }
-            //指定密码的值
-            txtPwd.Text = "这是原来的密码吗";
+            
+            txtPwd.Text = "Is this original password?";
 
-            btnSave.Text = "修改";
+            btnSave.Text = "Update";
+        }
+
+        private void btnRemove_Click(object sender, EventArgs e)
+        {
+            var rows = dgvList.SelectedRows;
+            if (rows.Count > 0)
+            {
+                DialogResult result = MessageBox.Show("Are you sure to delete?", "Tip: ", MessageBoxButtons.OKCancel);
+                if (result == DialogResult.Cancel)
+                {
+                    return;
+                }
+
+                int id = int.Parse(rows[0].Cells[0].Value.ToString());
+                if (miBll.Remove(id))
+                {
+                    LoadList();
+                }
+            }
+            else
+            {
+                MessageBox.Show("Please select a user to delete.");
+            }
         }
     }
 }
