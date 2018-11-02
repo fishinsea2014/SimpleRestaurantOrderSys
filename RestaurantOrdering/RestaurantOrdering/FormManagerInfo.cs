@@ -21,17 +21,15 @@ namespace RestaurantOrdering
 
         ManagerInfoBll miBll = new ManagerInfoBll();
 
-        private void FormManagerInfo_Load(object sender, EventArgs e)
-        {
-            LoadList();
-        }
+        //private void FormManagerInfo_Load(object sender, EventArgs e)
+        //{
+        //    LoadList();
+        //}
 
         private void LoadList()
         {
-            //throw new NotImplementedException();
-            //禁用列表的自动生成
+            
             dgvList.AutoGenerateColumns = false;
-            //调用方法获取数据，绑定到列表的数据源上
             dgvList.DataSource = miBll.GetList();
         }
 
@@ -47,6 +45,11 @@ namespace RestaurantOrdering
         /// <param name="e"></param>
         private void btnSave_Click(object sender, EventArgs e)
         {
+            if (txtName.Text == "" && txtPwd.Text == "")
+            {
+                label6.Text = "Tips: User name and password cannot be empty.";
+                return;
+            }
             //Create an new manager by input
             ManagerInfo mi = new ManagerInfo()
             {
@@ -164,6 +167,12 @@ namespace RestaurantOrdering
             {
                 MessageBox.Show("Please select a user to delete.");
             }
+        }
+
+        private void FormManagerInfo_Load_1(object sender, EventArgs e)
+        {
+            LoadList();
+
         }
     }
 }
