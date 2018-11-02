@@ -60,7 +60,7 @@ namespace CaterDal
             string sql = "update ManagerInfo set mname=@name";
             listPs.Add(new SQLiteParameter("@name", mi.MName));
             
-            if (!mi.MPwd.Equals("这是原来的密码吗"))
+            if (!mi.MPwd.Equals("This is original password"))
             {
                 sql += ",mpwd=@pwd";
                 listPs.Add(new SQLiteParameter("@pwd", Md5Helper.EncryptString(mi.MPwd)));
@@ -87,6 +87,39 @@ namespace CaterDal
             SQLiteParameter p = new SQLiteParameter("@id", id);
             
             return SqliteHelper.ExecuteNonQuery(sql, p);
+        }
+        /// <summary>
+        /// Get an user object by a name
+        /// </summary>
+        /// <param name="name"></param>
+        /// <returns></returns>
+        public ManagerInfo GetByName(string name)
+        {
+            ManagerInfo mi = null;
+            //Construct the sql query statement
+            string sql = "select * from managerInfo where mname=@name";
+            //Set the parameter for the query
+            SQLiteParameter p = new SQLiteParameter("@name", name);
+            //Execute the query
+            DataTable dt = SqliteHelper.GetDataTable(sql, p);
+
+            if (dt.Rows.Count > 0)
+            {
+                mi = new ManagerInfo()
+                {
+
+                    MId = Convert.ToInt32(dt.Rows[0][0]),
+                    MName = name,
+                    MPwd = dt.Rows[0][2].ToString(),
+                    MType = Convert.ToInt32(dt.Rows[0][3])
+                };
+            }
+            else
+            {
+                Console.WriteLine("The user does not exist");
+            }
+
+            return mi;
         }
     }
 }

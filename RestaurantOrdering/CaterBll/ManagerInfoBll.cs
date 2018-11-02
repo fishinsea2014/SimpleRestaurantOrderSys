@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using CaterCommon;
 using CaterDal;
 using CaterModel;
 
@@ -33,5 +34,27 @@ namespace CaterBll
         {
             return miDal.Delete(id) > 0;
         }
+
+        public LoginState Login(string name , string pwd)
+        {
+            ManagerInfo mi = miDal.GetByName(name);
+            if (mi == null)
+            {
+                return LoginState.NameError;
+            }
+            else
+            {
+                //Username and password is correct?
+                if (mi.MPwd.Equals(Md5Helper.EncryptString(pwd)))
+                {
+                    return LoginState.Ok;
+                }
+                else
+                {
+                    return LoginState.PwdError;
+                }                
+            }            
+        }
+        
     }
 }

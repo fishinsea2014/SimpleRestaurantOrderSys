@@ -44,6 +44,10 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\CaterCommon\CaterCommon.csproj">
+      <Project>{ECB57041-F92F-4E97-B0C8-54B84A9B7C65}</Project>
+      <Name>CaterCommon</Name>
+    </ProjectReference>
     <ProjectReference Include="..\CaterDal\CaterDal.csproj">
       <Project>{6d3d4088-7cdc-4aca-9711-6d3d03f911a8}</Project>
       <Name>CaterDal</Name>

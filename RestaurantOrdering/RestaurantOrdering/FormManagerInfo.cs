@@ -21,11 +21,7 @@ namespace RestaurantOrdering
 
         ManagerInfoBll miBll = new ManagerInfoBll();
 
-        //private void FormManagerInfo_Load(object sender, EventArgs e)
-        //{
-        //    LoadList();
-        //}
-
+        
         private void LoadList()
         {
             
@@ -143,7 +139,7 @@ namespace RestaurantOrdering
             
             txtPwd.Text = "Is this original password?";
 
-            btnSave.Text = "Update";
+            btnSave.Text = " ";
         }
 
         private void btnRemove_Click(object sender, EventArgs e)
@@ -172,7 +168,6 @@ namespace RestaurantOrdering
         private void FormManagerInfo_Load_1(object sender, EventArgs e)
         {
             LoadList();
-
         }
     }
 }
