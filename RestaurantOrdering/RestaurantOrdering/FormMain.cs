@@ -36,5 +36,10 @@ namespace RestaurantOrdering
         {
             Application.Exit();
         }
+
+        private void MenuManagerInfo_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
