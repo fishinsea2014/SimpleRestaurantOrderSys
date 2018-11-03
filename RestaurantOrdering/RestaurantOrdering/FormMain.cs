@@ -39,7 +39,10 @@ namespace RestaurantOrdering
 
         private void MenuManagerInfo_Click(object sender, EventArgs e)
         {
-
+            FormManagerInfo formManagerInfo = FormManagerInfo.Create();
+            formManagerInfo.Show();
+            formManagerInfo.Focus();
+            formManagerInfo.WindowState = FormWindowState.Normal;
         }
     }
 }

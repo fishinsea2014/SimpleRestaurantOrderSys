@@ -14,14 +14,40 @@ namespace RestaurantOrdering
 {
     /// <summary>
     /// User management module.
+    /// This is a singleton class.
     /// </summary>
     public partial class FormManagerInfo : Form
     {
-        public FormManagerInfo()
+
+        private FormManagerInfo()
         {
             InitializeComponent();
         }
 
+        //Implement singleton
+        private static FormManagerInfo _form;
+
+        public static FormManagerInfo Create()
+        {
+            if (_form == null)
+            {
+                _form = new FormManagerInfo();
+            }
+            return _form;
+        }
+
+        /// <summary>
+        /// When close user management form, close() will release current form and need to assign null to the form.
+        /// If not, will throw exception.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void FormManagerInfo_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            _form = null;
+        }
+
+        //Create a bll object.
         ManagerInfoBll miBll = new ManagerInfoBll();
 
         
@@ -172,5 +198,7 @@ namespace RestaurantOrdering
         {
             LoadList();
         }
+
+        
     }
 }

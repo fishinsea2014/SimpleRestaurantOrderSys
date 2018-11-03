@@ -272,6 +272,7 @@
             this.Controls.Add(this.groupBox1);
             this.Name = "FormManagerInfo";
             this.Text = "Form1";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FormManagerInfo_FormClosing);
             this.Load += new System.EventHandler(this.FormManagerInfo_Load_1);
             this.groupBox2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvList)).EndInit();
