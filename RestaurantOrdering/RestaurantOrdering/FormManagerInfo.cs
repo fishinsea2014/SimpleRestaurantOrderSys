@@ -12,6 +12,9 @@ using System.Windows.Forms;
 
 namespace RestaurantOrdering
 {
+    /// <summary>
+    /// User management module.
+    /// </summary>
     public partial class FormManagerInfo : Form
     {
         public FormManagerInfo()
