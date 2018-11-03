@@ -113,10 +113,12 @@ namespace CaterDal
                     MPwd = dt.Rows[0][2].ToString(),
                     MType = Convert.ToInt32(dt.Rows[0][3])
                 };
+                //type = mi.MType;
             }
             else
             {
                 Console.WriteLine("The user does not exist");
+                //type = 0;
             }
 
             return mi;

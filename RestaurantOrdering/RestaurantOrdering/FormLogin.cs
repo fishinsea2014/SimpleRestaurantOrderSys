@@ -29,12 +29,14 @@ namespace RestaurantOrdering
             string name = textUsername.Text;
             string pwd = textPassword.Text;
 
+            int type;
             ManagerInfoBll miBll = new ManagerInfoBll();
-            LoginState loginState = miBll.Login(name, pwd);
+            LoginState loginState = miBll.Login(name, pwd, out type);
             switch (loginState)
             {
                 case LoginState.Ok:
                     FormMain main = new FormMain();
+                    main.Tag = type;
                     main.Show();
                     this.Hide();
                     break;

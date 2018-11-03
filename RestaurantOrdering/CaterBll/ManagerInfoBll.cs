@@ -35,8 +35,9 @@ namespace CaterBll
             return miDal.Delete(id) > 0;
         }
 
-        public LoginState Login(string name , string pwd)
+        public LoginState Login(string name, string pwd, out int type)
         {
+            type = -1;
             ManagerInfo mi = miDal.GetByName(name);
             if (mi == null)
             {
@@ -47,6 +48,8 @@ namespace CaterBll
                 //Username and password is correct?
                 if (mi.MPwd.Equals(Md5Helper.EncryptString(pwd)))
                 {
+                    type=mi.MType;
+                    
                     return LoginState.Ok;
                 }
                 else

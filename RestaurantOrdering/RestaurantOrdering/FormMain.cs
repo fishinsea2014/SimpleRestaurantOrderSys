@@ -16,5 +16,25 @@ namespace RestaurantOrdering
         {
             InitializeComponent();
         }
+
+        private void FormMain_Load(object sender, EventArgs e)
+        {
+            //Identify the role of the user, and set the buttons accordingly.
+            int type = Convert.ToInt32(this.Tag);
+            if (type == 1)
+            {
+
+            }
+            else
+            {
+                MenuManagerInfo.Visible = false;
+            }
+
+        }
+
+        private void FormMain_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }

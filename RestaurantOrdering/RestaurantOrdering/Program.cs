@@ -17,6 +17,7 @@ namespace RestaurantOrdering
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             //Set the entrance of WinForm
+            //Application.Run(new FormLogin());
             Application.Run(new FormLogin());
         }
     }
