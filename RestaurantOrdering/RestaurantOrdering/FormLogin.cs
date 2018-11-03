@@ -38,6 +38,7 @@ namespace RestaurantOrdering
                     FormMain main = new FormMain();
                     main.Tag = type;
                     main.Show();
+                    main.Focus();
                     this.Hide();
                     break;
                 case LoginState.NameError:
