@@ -72,6 +72,7 @@
             this.MenuMemberInfo.Name = "MenuMemberInfo";
             this.MenuMemberInfo.Size = new System.Drawing.Size(76, 68);
             this.MenuMemberInfo.Text = "toolStripMenuItem2";
+            this.MenuMemberInfo.Click += new System.EventHandler(this.MenuMemberInfo_Click);
             // 
             // MenuTableInfo
             // 

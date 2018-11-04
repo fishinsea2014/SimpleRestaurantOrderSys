@@ -44,5 +44,11 @@ namespace RestaurantOrdering
             formManagerInfo.Focus();
             formManagerInfo.WindowState = FormWindowState.Normal;
         }
+
+        private void MenuMemberInfo_Click(object sender, EventArgs e)
+        {
+            FormMemberTypeInfo formMemberInfo = new FormMemberTypeInfo();
+            formMemberInfo.Show();
+        }
     }
 }
