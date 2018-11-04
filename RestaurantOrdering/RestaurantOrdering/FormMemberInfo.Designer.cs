@@ -83,7 +83,7 @@
             this.btnSearchAll.Name = "btnSearchAll";
             this.btnSearchAll.Size = new System.Drawing.Size(153, 27);
             this.btnSearchAll.TabIndex = 5;
-            this.btnSearchAll.Text = "Search";
+            this.btnSearchAll.Text = "Show All";
             this.btnSearchAll.UseVisualStyleBackColor = true;
             // 
             // txtPhoneSearch
@@ -92,6 +92,7 @@
             this.txtPhoneSearch.Name = "txtPhoneSearch";
             this.txtPhoneSearch.Size = new System.Drawing.Size(109, 20);
             this.txtPhoneSearch.TabIndex = 3;
+            this.txtPhoneSearch.Leave += new System.EventHandler(this.txtPhoneSearch_Leave);
             // 
             // label2
             // 
@@ -108,6 +109,7 @@
             this.txtNameSearch.Name = "txtNameSearch";
             this.txtNameSearch.Size = new System.Drawing.Size(110, 20);
             this.txtNameSearch.TabIndex = 1;
+            this.txtNameSearch.TextChanged += new System.EventHandler(this.txtNameSearch_TextChanged);
             // 
             // label1
             // 

@@ -14,7 +14,7 @@ namespace CaterDal
         /// <summary>
         /// Get the list of VIP member
         /// </summary>
-        /// <param name="dic"></param>
+        /// <param name="dic">Query string, in the form of pairs, like "name":"***" </param>
         /// <returns></returns>
         public List<MemberInfo> GetList(Dictionary<string, string> dic)
         {
@@ -26,13 +26,15 @@ namespace CaterDal
 
             List<SQLiteParameter> listP = new List<SQLiteParameter>();
 
-            //if (dic.Count > 0)
-            //{
-            //    foreach (var pair in dic)
-            //    {
-            //        sql += "and" + pair.Key + " like @" + pair.Key;
-            //    }
-            //}
+            //Splicing query condition with query string in dic
+            if (dic.Count > 0)
+            {
+                foreach (var pair in dic)
+                {
+                    sql += " and " + pair.Key + " like @" + pair.Key;
+                    listP.Add(new SQLiteParameter("@" + pair.Key, "%" + pair.Value + "%"));
+                }
+            }
 
             //Execute the sql and get the result set.
             DataTable dt = SqliteHelper.GetDataTable(sql, listP.ToArray());
