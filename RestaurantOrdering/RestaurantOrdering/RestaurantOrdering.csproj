@@ -51,6 +51,12 @@
     <Compile Include="FormDishInfo.Designer.cs">
       <DependentUpon>FormDishInfo.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormDishTypeInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormDishTypeInfo.Designer.cs">
+      <DependentUpon>FormDishTypeInfo.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormLogin.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -83,6 +89,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="FormDishTypeInfo.resx">
+      <DependentUpon>FormDishTypeInfo.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormLogin.resx">
       <DependentUpon>FormLogin.cs</DependentUpon>
     </EmbeddedResource>
@@ -127,6 +136,10 @@
     <ProjectReference Include="..\CaterBll\CaterBll.csproj">
       <Project>{215EC56C-14E2-4C17-953C-53FAE93F7D79}</Project>
       <Name>CaterBll</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CaterDal\CaterDal.csproj">
+      <Project>{6D3D4088-7CDC-4ACA-9711-6D3D03F911A8}</Project>
+      <Name>CaterDal</Name>
     </ProjectReference>
     <ProjectReference Include="..\CaterModel\CaterModel.csproj">
       <Project>{A3D88570-51EE-4265-A3FF-31675E40CF34}</Project>
