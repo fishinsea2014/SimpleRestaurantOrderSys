@@ -21,6 +21,7 @@ namespace RestaurantOrdering
 
         MemberTypeInfoBll mtiBll = new MemberTypeInfoBll();
 
+        //Keep the 
         private DialogResult result = DialogResult.Cancel;
 
         
