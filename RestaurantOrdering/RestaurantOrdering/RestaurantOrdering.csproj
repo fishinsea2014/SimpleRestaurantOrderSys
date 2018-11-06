@@ -89,6 +89,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="FormDishInfo.resx">
+      <DependentUpon>FormDishInfo.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormDishTypeInfo.resx">
       <DependentUpon>FormDishTypeInfo.cs</DependentUpon>
     </EmbeddedResource>

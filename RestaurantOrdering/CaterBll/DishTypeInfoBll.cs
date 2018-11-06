@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace CaterBll
 {
-    class DishTypeInfoBll
+    public class DishTypeInfoBll
     {
         private DishTypeInfoDal dtiDal = new DishTypeInfoDal();
         public List<DishTypeInfo> GetList()

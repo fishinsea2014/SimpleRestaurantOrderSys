@@ -71,6 +71,7 @@
             this.btnRemove.TabIndex = 17;
             this.btnRemove.Text = "Delete selected item";
             this.btnRemove.UseVisualStyleBackColor = true;
+            this.btnRemove.Click += new System.EventHandler(this.btnRemove_Click);
             // 
             // label9
             // 
@@ -90,6 +91,7 @@
             this.btnCancel.TabIndex = 7;
             this.btnCancel.Text = "Cancel";
             this.btnCancel.UseVisualStyleBackColor = true;
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
             // txtTitle
             // 
@@ -162,6 +164,7 @@
             this.dgvList.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvList.Size = new System.Drawing.Size(254, 206);
             this.dgvList.TabIndex = 0;
+            this.dgvList.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvList_CellDoubleClick);
             // 
             // Column1
             // 
@@ -186,6 +189,7 @@
             this.Controls.Add(this.groupBox1);
             this.Name = "FormDishTypeInfo";
             this.Text = "FormDishTypeInfo";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FormDishTypeInfo_FormClosing);
             this.Load += new System.EventHandler(this.FormDishTypeInfo_Load);
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
