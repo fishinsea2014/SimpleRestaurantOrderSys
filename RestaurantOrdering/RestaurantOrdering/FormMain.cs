@@ -40,17 +40,13 @@ namespace RestaurantOrdering
             //throw new NotImplementedException();
             HallInfoBll hiBll = new HallInfoBll();
             var list = hiBll.GetList();
+            //Clear previous tab pages
             tcHallInfo.TabPages.Clear();
             TableInfoBll tiBll = new TableInfoBll();
             foreach (var hi in list)
             {
                 //Create a tab each area. 
                 TabPage tp = new TabPage(hi.HTitle);
-
-                
-
-                
-
                 //Get the tables of the area
                 //Set query condition
                 Dictionary<string, string> dic = new Dictionary<string, string>();
@@ -102,6 +98,7 @@ namespace RestaurantOrdering
         private void MenuTableInfo_Click(object sender, EventArgs e)
         {
             FormTable formTable = new FormTable();
+            formTable.Refresh += LoadHallInfo;
             formTable.Show();
         }
 

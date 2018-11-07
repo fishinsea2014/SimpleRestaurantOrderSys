@@ -15,6 +15,9 @@ namespace RestaurantOrdering
     public partial class FormTable : Form
     {
         private TableInfoBll tiBll = new TableInfoBll();
+
+        //Use a Refresh event to update the tables' information on Main Form.
+        public event Action Refresh;
         public FormTable()
         {
             InitializeComponent();
@@ -137,7 +140,7 @@ namespace RestaurantOrdering
             rbFree.Checked = true;
             btnSave.Text = "Add";
 
-            //Refresh();
+            Refresh();
         }
 
         private void btnCancel_Click(object sender, EventArgs e)
@@ -178,7 +181,7 @@ namespace RestaurantOrdering
                 }
             }
 
-            //Refresh();
+            Refresh();
         }
 
         private void btnAddHall_Click(object sender, EventArgs e)
