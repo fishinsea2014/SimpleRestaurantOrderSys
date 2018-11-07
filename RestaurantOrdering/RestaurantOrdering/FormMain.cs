@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CaterBll;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -30,6 +31,48 @@ namespace RestaurantOrdering
                 MenuManagerInfo.Visible = false;
             }
 
+            LoadHallInfo();
+
+        }
+
+        private void LoadHallInfo()
+        {
+            //throw new NotImplementedException();
+            HallInfoBll hiBll = new HallInfoBll();
+            var list = hiBll.GetList();
+            tcHallInfo.TabPages.Clear();
+            TableInfoBll tiBll = new TableInfoBll();
+            foreach (var hi in list)
+            {
+                //Create a tab each area. 
+                TabPage tp = new TabPage(hi.HTitle);
+
+                
+
+                
+
+                //Get the tables of the area
+                //Set query condition
+                Dictionary<string, string> dic = new Dictionary<string, string>();
+                dic.Add("thallid", hi.HId.ToString());
+                var listTableInfo = tiBll.GetList(dic);
+                //Create a ListView for each area tap
+                ListView lvTableInfo = new ListView();
+                lvTableInfo.LargeImageList = imageList1;
+                lvTableInfo.Dock = DockStyle.Fill;
+                tp.Controls.Add(lvTableInfo);
+                foreach (var ti in listTableInfo)
+                {
+                    var lvi = new ListViewItem(ti.TTitle, ti.TIsFree ? 0 : 1);
+                    lvi.Tag = ti.TId;
+                    lvTableInfo.Items.Add(lvi);
+                }
+
+                //Add tab page into a tab container
+                tcHallInfo.TabPages.Add(tp);
+
+                //tcHallInfo.TabPages.Add(new TabPage(hi.HTitle));
+            }
         }
 
         private void FormMain_FormClosed(object sender, FormClosedEventArgs e)
@@ -49,6 +92,23 @@ namespace RestaurantOrdering
         {
             FormMemberTypeInfo formMemberInfo = new FormMemberTypeInfo();
             formMemberInfo.Show();
+        }
+
+        private void MenuQuit_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void MenuTableInfo_Click(object sender, EventArgs e)
+        {
+            FormTable formTable = new FormTable();
+            formTable.Show();
+        }
+
+        private void MenuDishInfo_Click(object sender, EventArgs e)
+        {
+            FormDishInfo formDishInfo = new FormDishInfo();
+            formDishInfo.Show();
         }
     }
 }

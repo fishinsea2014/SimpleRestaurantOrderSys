@@ -28,6 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormMain));
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.MenuManagerInfo = new System.Windows.Forms.ToolStripMenuItem();
             this.MenuMemberInfo = new System.Windows.Forms.ToolStripMenuItem();
@@ -35,7 +37,11 @@
             this.MenuDishInfo = new System.Windows.Forms.ToolStripMenuItem();
             this.MenuOrder = new System.Windows.Forms.ToolStripMenuItem();
             this.MenuQuit = new System.Windows.Forms.ToolStripMenuItem();
+            this.tcHallInfo = new System.Windows.Forms.TabControl();
+            this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.menuStrip1.SuspendLayout();
+            this.tcHallInfo.SuspendLayout();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -81,6 +87,7 @@
             this.MenuTableInfo.Name = "MenuTableInfo";
             this.MenuTableInfo.Size = new System.Drawing.Size(76, 68);
             this.MenuTableInfo.Text = "toolStripMenuItem3";
+            this.MenuTableInfo.Click += new System.EventHandler(this.MenuTableInfo_Click);
             // 
             // MenuDishInfo
             // 
@@ -89,6 +96,7 @@
             this.MenuDishInfo.Name = "MenuDishInfo";
             this.MenuDishInfo.Size = new System.Drawing.Size(76, 68);
             this.MenuDishInfo.Text = "toolStripMenuItem4";
+            this.MenuDishInfo.Click += new System.EventHandler(this.MenuDishInfo_Click);
             // 
             // MenuOrder
             // 
@@ -105,12 +113,41 @@
             this.MenuQuit.Name = "MenuQuit";
             this.MenuQuit.Size = new System.Drawing.Size(76, 68);
             this.MenuQuit.Text = "toolStripMenuItem6";
+            this.MenuQuit.Click += new System.EventHandler(this.MenuQuit_Click);
+            // 
+            // tcHallInfo
+            // 
+            this.tcHallInfo.Controls.Add(this.tabPage1);
+            this.tcHallInfo.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tcHallInfo.Location = new System.Drawing.Point(0, 74);
+            this.tcHallInfo.Name = "tcHallInfo";
+            this.tcHallInfo.SelectedIndex = 0;
+            this.tcHallInfo.Size = new System.Drawing.Size(753, 618);
+            this.tcHallInfo.TabIndex = 1;
+            // 
+            // tabPage1
+            // 
+            this.tabPage1.Location = new System.Drawing.Point(4, 29);
+            this.tabPage1.Name = "tabPage1";
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage1.Size = new System.Drawing.Size(745, 585);
+            this.tabPage1.TabIndex = 0;
+            this.tabPage1.Text = "tabPage1";
+            this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // imageList1
+            // 
+            this.imageList1.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageList1.ImageStream")));
+            this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
+            this.imageList1.Images.SetKeyName(0, "desk1.png");
+            this.imageList1.Images.SetKeyName(1, "desk2.png");
             // 
             // FormMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(753, 692);
+            this.Controls.Add(this.tcHallInfo);
             this.Controls.Add(this.menuStrip1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.MainMenuStrip = this.menuStrip1;
@@ -123,6 +160,7 @@
             this.Load += new System.EventHandler(this.FormMain_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
+            this.tcHallInfo.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -137,5 +175,8 @@
         private System.Windows.Forms.ToolStripMenuItem MenuDishInfo;
         private System.Windows.Forms.ToolStripMenuItem MenuOrder;
         private System.Windows.Forms.ToolStripMenuItem MenuQuit;
+        private System.Windows.Forms.TabControl tcHallInfo;
+        private System.Windows.Forms.TabPage tabPage1;
+        private System.Windows.Forms.ImageList imageList1;
     }
 }
