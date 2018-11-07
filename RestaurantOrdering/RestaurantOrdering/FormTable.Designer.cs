@@ -126,6 +126,7 @@
             this.btnRemove.TabIndex = 19;
             this.btnRemove.Text = "Delete selected item";
             this.btnRemove.UseVisualStyleBackColor = true;
+            this.btnRemove.Click += new System.EventHandler(this.btnRemove_Click);
             // 
             // label9
             // 
@@ -145,6 +146,7 @@
             this.btnAddHall.TabIndex = 13;
             this.btnAddHall.Text = "Area Management";
             this.btnAddHall.UseVisualStyleBackColor = true;
+            this.btnAddHall.Click += new System.EventHandler(this.btnAddHall_Click);
             // 
             // btnCancel
             // 
@@ -154,6 +156,7 @@
             this.btnCancel.TabIndex = 12;
             this.btnCancel.Text = "Cancel";
             this.btnCancel.UseVisualStyleBackColor = true;
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
             // btnSave
             // 
@@ -163,6 +166,7 @@
             this.btnSave.TabIndex = 11;
             this.btnSave.Text = "Add";
             this.btnSave.UseVisualStyleBackColor = true;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // ddlHallAdd
             // 
@@ -247,6 +251,7 @@
             this.ddlFreeSearch.Name = "ddlFreeSearch";
             this.ddlFreeSearch.Size = new System.Drawing.Size(112, 21);
             this.ddlFreeSearch.TabIndex = 9;
+            this.ddlFreeSearch.SelectedIndexChanged += new System.EventHandler(this.ddlFreeSearch_SelectedIndexChanged);
             // 
             // ddlHallSearch
             // 
@@ -256,6 +261,7 @@
             this.ddlHallSearch.Name = "ddlHallSearch";
             this.ddlHallSearch.Size = new System.Drawing.Size(112, 21);
             this.ddlHallSearch.TabIndex = 8;
+            this.ddlHallSearch.SelectedIndexChanged += new System.EventHandler(this.ddlHallSearch_SelectedIndexChanged);
             // 
             // btnSearchAll
             // 
@@ -265,6 +271,7 @@
             this.btnSearchAll.TabIndex = 5;
             this.btnSearchAll.Text = "Display All";
             this.btnSearchAll.UseVisualStyleBackColor = true;
+            this.btnSearchAll.Click += new System.EventHandler(this.btnSearchAll_Click);
             // 
             // label2
             // 
@@ -313,6 +320,8 @@
             this.dgvList.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvList.Size = new System.Drawing.Size(448, 466);
             this.dgvList.TabIndex = 0;
+            this.dgvList.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvList_CellDoubleClick);
+            this.dgvList.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dgvList_CellFormatting);
             // 
             // Column1
             // 
@@ -352,6 +361,7 @@
             this.Controls.Add(this.groupBox1);
             this.Name = "FormTable";
             this.Text = "Table Management";
+            this.Load += new System.EventHandler(this.FormTable_Load);
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
             this.groupBox2.ResumeLayout(false);
