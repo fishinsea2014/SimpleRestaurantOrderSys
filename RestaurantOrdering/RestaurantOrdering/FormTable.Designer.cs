@@ -1,6 +1,6 @@
 ﻿namespace RestaurantOrdering
 {
-    partial class FormDishInfo
+    partial class FormTable
     {
         /// <summary>
         /// Required designer variable.
@@ -29,33 +29,32 @@
         private void InitializeComponent()
         {
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.rbUnFree = new System.Windows.Forms.RadioButton();
+            this.rbFree = new System.Windows.Forms.RadioButton();
             this.btnRemove = new System.Windows.Forms.Button();
             this.label9 = new System.Windows.Forms.Label();
-            this.btnAddType = new System.Windows.Forms.Button();
+            this.btnAddHall = new System.Windows.Forms.Button();
             this.btnCancel = new System.Windows.Forms.Button();
             this.btnSave = new System.Windows.Forms.Button();
-            this.ddlTypeAdd = new System.Windows.Forms.ComboBox();
-            this.txtChar = new System.Windows.Forms.TextBox();
-            this.txtPrice = new System.Windows.Forms.TextBox();
-            this.txtTitleSave = new System.Windows.Forms.TextBox();
+            this.ddlHallAdd = new System.Windows.Forms.ComboBox();
+            this.txtTitle = new System.Windows.Forms.TextBox();
             this.txtId = new System.Windows.Forms.TextBox();
-            this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.ddlTypeSearch = new System.Windows.Forms.ComboBox();
+            this.ddlFreeSearch = new System.Windows.Forms.ComboBox();
+            this.ddlHallSearch = new System.Windows.Forms.ComboBox();
             this.btnSearchAll = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
-            this.txtTitleSearch = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.dgvList = new System.Windows.Forms.DataGridView();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox3.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -65,231 +64,235 @@
             // 
             // groupBox3
             // 
+            this.groupBox3.Controls.Add(this.label7);
+            this.groupBox3.Controls.Add(this.rbUnFree);
+            this.groupBox3.Controls.Add(this.rbFree);
             this.groupBox3.Controls.Add(this.btnRemove);
             this.groupBox3.Controls.Add(this.label9);
-            this.groupBox3.Controls.Add(this.btnAddType);
+            this.groupBox3.Controls.Add(this.btnAddHall);
             this.groupBox3.Controls.Add(this.btnCancel);
             this.groupBox3.Controls.Add(this.btnSave);
-            this.groupBox3.Controls.Add(this.ddlTypeAdd);
-            this.groupBox3.Controls.Add(this.txtChar);
-            this.groupBox3.Controls.Add(this.txtPrice);
-            this.groupBox3.Controls.Add(this.txtTitleSave);
+            this.groupBox3.Controls.Add(this.ddlHallAdd);
+            this.groupBox3.Controls.Add(this.txtTitle);
             this.groupBox3.Controls.Add(this.txtId);
-            this.groupBox3.Controls.Add(this.label7);
             this.groupBox3.Controls.Add(this.label6);
             this.groupBox3.Controls.Add(this.label5);
             this.groupBox3.Controls.Add(this.label4);
             this.groupBox3.Controls.Add(this.label3);
-            this.groupBox3.Location = new System.Drawing.Point(586, 148);
+            this.groupBox3.Location = new System.Drawing.Point(469, 148);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(189, 343);
+            this.groupBox3.Size = new System.Drawing.Size(177, 343);
             this.groupBox3.TabIndex = 12;
             this.groupBox3.TabStop = false;
-            this.groupBox3.Text = "ADD\\UPDATE";
+            this.groupBox3.Text = "Add \\Update";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.ForeColor = System.Drawing.SystemColors.AppWorkspace;
+            this.label7.Location = new System.Drawing.Point(40, 94);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(30, 13);
+            this.label7.TabIndex = 22;
+            this.label7.Text = "Tips:";
+            // 
+            // rbUnFree
+            // 
+            this.rbUnFree.AutoSize = true;
+            this.rbUnFree.Location = new System.Drawing.Point(109, 205);
+            this.rbUnFree.Name = "rbUnFree";
+            this.rbUnFree.Size = new System.Drawing.Size(71, 17);
+            this.rbUnFree.TabIndex = 21;
+            this.rbUnFree.Text = "Occupied";
+            this.rbUnFree.UseVisualStyleBackColor = true;
+            // 
+            // rbFree
+            // 
+            this.rbFree.AutoSize = true;
+            this.rbFree.Checked = true;
+            this.rbFree.Location = new System.Drawing.Point(64, 205);
+            this.rbFree.Name = "rbFree";
+            this.rbFree.Size = new System.Drawing.Size(43, 17);
+            this.rbFree.TabIndex = 20;
+            this.rbFree.TabStop = true;
+            this.rbFree.Text = "Yes";
+            this.rbFree.UseVisualStyleBackColor = true;
             // 
             // btnRemove
             // 
-            this.btnRemove.Location = new System.Drawing.Point(11, 308);
+            this.btnRemove.Location = new System.Drawing.Point(11, 303);
             this.btnRemove.Name = "btnRemove";
-            this.btnRemove.Size = new System.Drawing.Size(167, 25);
-            this.btnRemove.TabIndex = 16;
+            this.btnRemove.Size = new System.Drawing.Size(157, 27);
+            this.btnRemove.TabIndex = 19;
             this.btnRemove.Text = "Delete selected item";
             this.btnRemove.UseVisualStyleBackColor = true;
-            this.btnRemove.Click += new System.EventHandler(this.btnRemove_Click);
             // 
             // label9
             // 
             this.label9.AutoSize = true;
             this.label9.ForeColor = System.Drawing.Color.Red;
-            this.label9.Location = new System.Drawing.Point(7, 286);
+            this.label9.Location = new System.Drawing.Point(9, 280);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(177, 13);
+            this.label9.Size = new System.Drawing.Size(170, 13);
             this.label9.TabIndex = 15;
-            this.label9.Text = "Tips: Double click an item to update";
+            this.label9.Text = "Tip: double click an item to update";
             // 
-            // btnAddType
+            // btnAddHall
             // 
-            this.btnAddType.Location = new System.Drawing.Point(56, 131);
-            this.btnAddType.Name = "btnAddType";
-            this.btnAddType.Size = new System.Drawing.Size(122, 25);
-            this.btnAddType.TabIndex = 13;
-            this.btnAddType.Text = "Manage Types";
-            this.btnAddType.UseVisualStyleBackColor = true;
-            this.btnAddType.Click += new System.EventHandler(this.btnAddType_Click);
+            this.btnAddHall.Location = new System.Drawing.Point(56, 161);
+            this.btnAddHall.Name = "btnAddHall";
+            this.btnAddHall.Size = new System.Drawing.Size(112, 27);
+            this.btnAddHall.TabIndex = 13;
+            this.btnAddHall.Text = "Area Management";
+            this.btnAddHall.UseVisualStyleBackColor = true;
             // 
             // btnCancel
             // 
-            this.btnCancel.Location = new System.Drawing.Point(103, 247);
+            this.btnCancel.Location = new System.Drawing.Point(98, 238);
             this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(75, 25);
+            this.btnCancel.Size = new System.Drawing.Size(70, 27);
             this.btnCancel.TabIndex = 12;
-            this.btnCancel.Text = "CANCEL";
+            this.btnCancel.Text = "Cancel";
             this.btnCancel.UseVisualStyleBackColor = true;
-            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
             // btnSave
             // 
-            this.btnSave.Location = new System.Drawing.Point(9, 247);
+            this.btnSave.Location = new System.Drawing.Point(11, 238);
             this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(72, 25);
+            this.btnSave.Size = new System.Drawing.Size(70, 27);
             this.btnSave.TabIndex = 11;
-            this.btnSave.Text = "ADD";
+            this.btnSave.Text = "Add";
             this.btnSave.UseVisualStyleBackColor = true;
-            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
-            // ddlTypeAdd
+            // ddlHallAdd
             // 
-            this.ddlTypeAdd.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.ddlTypeAdd.FormattingEnabled = true;
-            this.ddlTypeAdd.Location = new System.Drawing.Point(56, 102);
-            this.ddlTypeAdd.Name = "ddlTypeAdd";
-            this.ddlTypeAdd.Size = new System.Drawing.Size(122, 21);
-            this.ddlTypeAdd.TabIndex = 10;
+            this.ddlHallAdd.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.ddlHallAdd.FormattingEnabled = true;
+            this.ddlHallAdd.Location = new System.Drawing.Point(56, 132);
+            this.ddlHallAdd.Name = "ddlHallAdd";
+            this.ddlHallAdd.Size = new System.Drawing.Size(112, 21);
+            this.ddlHallAdd.TabIndex = 10;
             // 
-            // txtChar
+            // txtTitle
             // 
-            this.txtChar.Location = new System.Drawing.Point(56, 204);
-            this.txtChar.Name = "txtChar";
-            this.txtChar.Size = new System.Drawing.Size(122, 20);
-            this.txtChar.TabIndex = 9;
-            // 
-            // txtPrice
-            // 
-            this.txtPrice.Location = new System.Drawing.Point(56, 170);
-            this.txtPrice.Name = "txtPrice";
-            this.txtPrice.Size = new System.Drawing.Size(122, 20);
-            this.txtPrice.TabIndex = 8;
-            // 
-            // txtTitleSave
-            // 
-            this.txtTitleSave.Location = new System.Drawing.Point(56, 64);
-            this.txtTitleSave.Name = "txtTitleSave";
-            this.txtTitleSave.Size = new System.Drawing.Size(122, 20);
-            this.txtTitleSave.TabIndex = 6;
+            this.txtTitle.Location = new System.Drawing.Point(56, 64);
+            this.txtTitle.Name = "txtTitle";
+            this.txtTitle.Size = new System.Drawing.Size(112, 20);
+            this.txtTitle.TabIndex = 6;
             // 
             // txtId
             // 
             this.txtId.Location = new System.Drawing.Point(56, 28);
             this.txtId.Name = "txtId";
             this.txtId.ReadOnly = true;
-            this.txtId.Size = new System.Drawing.Size(122, 20);
+            this.txtId.Size = new System.Drawing.Size(112, 20);
             this.txtId.TabIndex = 5;
             this.txtId.Text = "No number";
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(9, 212);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(44, 13);
-            this.label7.TabIndex = 4;
-            this.label7.Text = "Remark";
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(9, 174);
+            this.label6.Location = new System.Drawing.Point(9, 205);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(37, 13);
+            this.label6.Size = new System.Drawing.Size(56, 13);
             this.label6.TabIndex = 3;
-            this.label6.Text = "Price: ";
+            this.label6.Text = "Available?";
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(9, 105);
+            this.label5.Location = new System.Drawing.Point(9, 135);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(37, 13);
+            this.label5.Size = new System.Drawing.Size(35, 13);
             this.label5.TabIndex = 2;
-            this.label5.Text = "Type: ";
+            this.label5.Text = "Area: ";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
             this.label4.Location = new System.Drawing.Point(9, 68);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(41, 13);
+            this.label4.Size = new System.Drawing.Size(38, 13);
             this.label4.TabIndex = 1;
-            this.label4.Text = "Name: ";
+            this.label4.Text = "Name:";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(7, 35);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(29, 13);
+            this.label3.Size = new System.Drawing.Size(26, 13);
             this.label3.TabIndex = 0;
-            this.label3.Text = "NO: ";
+            this.label3.Text = "NO.";
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.ddlTypeSearch);
+            this.groupBox2.Controls.Add(this.ddlFreeSearch);
+            this.groupBox2.Controls.Add(this.ddlHallSearch);
             this.groupBox2.Controls.Add(this.btnSearchAll);
             this.groupBox2.Controls.Add(this.label2);
-            this.groupBox2.Controls.Add(this.txtTitleSearch);
             this.groupBox2.Controls.Add(this.label1);
-            this.groupBox2.Location = new System.Drawing.Point(586, 6);
+            this.groupBox2.Location = new System.Drawing.Point(469, 6);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(189, 135);
+            this.groupBox2.Size = new System.Drawing.Size(177, 135);
             this.groupBox2.TabIndex = 11;
             this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Search";
+            this.groupBox2.Text = "搜索";
             // 
-            // ddlTypeSearch
+            // ddlFreeSearch
             // 
-            this.ddlTypeSearch.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.ddlTypeSearch.FormattingEnabled = true;
-            this.ddlTypeSearch.Location = new System.Drawing.Point(56, 64);
-            this.ddlTypeSearch.Name = "ddlTypeSearch";
-            this.ddlTypeSearch.Size = new System.Drawing.Size(122, 21);
-            this.ddlTypeSearch.TabIndex = 8;
-            this.ddlTypeSearch.SelectedIndexChanged += new System.EventHandler(this.ddlTypeSearch_SelectedIndexChanged);
+            this.ddlFreeSearch.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.ddlFreeSearch.FormattingEnabled = true;
+            this.ddlFreeSearch.Location = new System.Drawing.Point(56, 63);
+            this.ddlFreeSearch.Name = "ddlFreeSearch";
+            this.ddlFreeSearch.Size = new System.Drawing.Size(112, 21);
+            this.ddlFreeSearch.TabIndex = 9;
+            // 
+            // ddlHallSearch
+            // 
+            this.ddlHallSearch.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.ddlHallSearch.FormattingEnabled = true;
+            this.ddlHallSearch.Location = new System.Drawing.Point(56, 21);
+            this.ddlHallSearch.Name = "ddlHallSearch";
+            this.ddlHallSearch.Size = new System.Drawing.Size(112, 21);
+            this.ddlHallSearch.TabIndex = 8;
             // 
             // btnSearchAll
             // 
-            this.btnSearchAll.Location = new System.Drawing.Point(16, 104);
+            this.btnSearchAll.Location = new System.Drawing.Point(9, 101);
             this.btnSearchAll.Name = "btnSearchAll";
-            this.btnSearchAll.Size = new System.Drawing.Size(167, 25);
+            this.btnSearchAll.Size = new System.Drawing.Size(159, 27);
             this.btnSearchAll.TabIndex = 5;
             this.btnSearchAll.Text = "Display All";
             this.btnSearchAll.UseVisualStyleBackColor = true;
-            this.btnSearchAll.Click += new System.EventHandler(this.btnSearchAll_Click);
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(7, 68);
+            this.label2.Location = new System.Drawing.Point(7, 66);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(37, 13);
+            this.label2.Size = new System.Drawing.Size(50, 13);
             this.label2.TabIndex = 2;
-            this.label2.Text = "Type: ";
-            // 
-            // txtTitleSearch
-            // 
-            this.txtTitleSearch.Location = new System.Drawing.Point(55, 22);
-            this.txtTitleSearch.Name = "txtTitleSearch";
-            this.txtTitleSearch.Size = new System.Drawing.Size(123, 20);
-            this.txtTitleSearch.TabIndex = 1;
-            this.txtTitleSearch.Leave += new System.EventHandler(this.txtTitleSearch_Leave);
+            this.label2.Text = "Available";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(7, 28);
+            this.label1.Location = new System.Drawing.Point(7, 23);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(35, 13);
+            this.label1.Size = new System.Drawing.Size(25, 13);
             this.label1.TabIndex = 0;
-            this.label1.Text = "Name";
+            this.label1.Text = "Hall";
             // 
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.dgvList);
-            this.groupBox1.Location = new System.Drawing.Point(26, 6);
+            this.groupBox1.Location = new System.Drawing.Point(9, 6);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(554, 485);
+            this.groupBox1.Size = new System.Drawing.Size(454, 485);
             this.groupBox1.TabIndex = 10;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Cuisions List";
+            this.groupBox1.Text = "Table list";
             // 
             // dgvList
             // 
@@ -300,7 +303,6 @@
             this.Column1,
             this.Column2,
             this.Column3,
-            this.Column4,
             this.Column5});
             this.dgvList.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvList.Location = new System.Drawing.Point(3, 16);
@@ -309,56 +311,47 @@
             this.dgvList.ReadOnly = true;
             this.dgvList.RowTemplate.Height = 23;
             this.dgvList.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvList.Size = new System.Drawing.Size(548, 466);
+            this.dgvList.Size = new System.Drawing.Size(448, 466);
             this.dgvList.TabIndex = 0;
-            this.dgvList.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvList_CellDoubleClick);
             // 
             // Column1
             // 
-            this.Column1.DataPropertyName = "Did";
+            this.Column1.DataPropertyName = "TId";
             this.Column1.HeaderText = "NO.";
             this.Column1.Name = "Column1";
             this.Column1.ReadOnly = true;
             // 
             // Column2
             // 
-            this.Column2.DataPropertyName = "DTitle";
+            this.Column2.DataPropertyName = "TTitle";
             this.Column2.HeaderText = "Name";
             this.Column2.Name = "Column2";
             this.Column2.ReadOnly = true;
             // 
             // Column3
             // 
-            this.Column3.DataPropertyName = "DTypeTitle";
-            this.Column3.HeaderText = "Type";
+            this.Column3.DataPropertyName = "HallTitle";
+            this.Column3.HeaderText = "Ared";
             this.Column3.Name = "Column3";
             this.Column3.ReadOnly = true;
             // 
-            // Column4
-            // 
-            this.Column4.DataPropertyName = "DPrice";
-            this.Column4.HeaderText = "Price";
-            this.Column4.Name = "Column4";
-            this.Column4.ReadOnly = true;
-            // 
             // Column5
             // 
-            this.Column5.DataPropertyName = "DChar";
-            this.Column5.HeaderText = "Remark";
+            this.Column5.DataPropertyName = "TIsFree";
+            this.Column5.HeaderText = "Available";
             this.Column5.Name = "Column5";
             this.Column5.ReadOnly = true;
             // 
-            // FormDishInfo
+            // FormTable
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 502);
+            this.ClientSize = new System.Drawing.Size(660, 497);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
-            this.Name = "FormDishInfo";
-            this.Text = "Cuisions Management";
-            this.Load += new System.EventHandler(this.FormDishInfo_Load);
+            this.Name = "FormTable";
+            this.Text = "Table Management";
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
             this.groupBox2.ResumeLayout(false);
@@ -372,33 +365,32 @@
         #endregion
 
         private System.Windows.Forms.GroupBox groupBox3;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.RadioButton rbUnFree;
+        private System.Windows.Forms.RadioButton rbFree;
         private System.Windows.Forms.Button btnRemove;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.Button btnAddType;
+        private System.Windows.Forms.Button btnAddHall;
         private System.Windows.Forms.Button btnCancel;
         private System.Windows.Forms.Button btnSave;
-        private System.Windows.Forms.ComboBox ddlTypeAdd;
-        private System.Windows.Forms.TextBox txtChar;
-        private System.Windows.Forms.TextBox txtPrice;
-        private System.Windows.Forms.TextBox txtTitleSave;
+        private System.Windows.Forms.ComboBox ddlHallAdd;
+        private System.Windows.Forms.TextBox txtTitle;
         private System.Windows.Forms.TextBox txtId;
-        private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.ComboBox ddlTypeSearch;
+        private System.Windows.Forms.ComboBox ddlFreeSearch;
+        private System.Windows.Forms.ComboBox ddlHallSearch;
         private System.Windows.Forms.Button btnSearchAll;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox txtTitleSearch;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.DataGridView dgvList;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
     }
 }

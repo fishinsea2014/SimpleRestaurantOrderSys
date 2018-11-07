@@ -57,6 +57,12 @@
     <Compile Include="FormDishTypeInfo.Designer.cs">
       <DependentUpon>FormDishTypeInfo.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormHall.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormHall.Designer.cs">
+      <DependentUpon>FormHall.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormLogin.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -87,13 +93,41 @@
     <Compile Include="FormMemberTypeInfo.Designer.cs">
       <DependentUpon>FormMemberTypeInfo.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormTable.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormTable.Designer.cs">
+      <DependentUpon>FormTable.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="test\Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="test\Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="test\Form2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="test\Form2.Designer.cs">
+      <DependentUpon>Form2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="test\Form3.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="test\Form3.Designer.cs">
+      <DependentUpon>Form3.cs</DependentUpon>
+    </Compile>
+    <Compile Include="test\MyDelegate.cs" />
     <EmbeddedResource Include="FormDishInfo.resx">
       <DependentUpon>FormDishInfo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormDishTypeInfo.resx">
       <DependentUpon>FormDishTypeInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormHall.resx">
+      <DependentUpon>FormHall.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormLogin.resx">
       <DependentUpon>FormLogin.cs</DependentUpon>
@@ -110,6 +144,9 @@
     <EmbeddedResource Include="FormMemberTypeInfo.resx">
       <DependentUpon>FormMemberTypeInfo.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FormTable.resx">
+      <DependentUpon>FormTable.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -120,6 +157,15 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="test\Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="test\Form2.resx">
+      <DependentUpon>Form2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="test\Form3.resx">
+      <DependentUpon>Form3.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
