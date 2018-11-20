@@ -17,9 +17,15 @@ namespace CaterModel
         }
         
         public partial class TableInfo
+        {
+            public string HallTitle { get; set; }
+        }
+
+    public partial class OrderDetailInfo
     {
-        public string HallTitle { get; set; }
+        public string DTitle { get; set; }
+        public decimal DPrice { get; set; }
     }
 
-    
+
 }
